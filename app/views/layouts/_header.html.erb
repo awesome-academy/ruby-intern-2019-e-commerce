@@ -1,0 +1,96 @@
+<header id="wn__header" class="header__area header__absolute sticky__header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+        <div class="logo">
+          <%= link_to root_path do %>
+            <%= image_tag "logo/logo.png" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-lg-8 d-none d-lg-block">
+        <nav class="mainmenu__nav">
+          <ul class="meninmenu d-flex justify-content-start">
+            <li class="drop with--one--item"><%= link_to "HOME", root_path %></li>
+            <% @categories.each do |category| %>
+              <% if category.id == 1 or category.id == 5 or category.id == 6 %>
+                <li class="drop">
+                  <%= link_to category.name, product_in_category_path(category_id: category.id) %>
+                  <div class="megamenu dropdown">
+                    <ul class="item item01">
+                      <%= render "books/book", category: category %>
+                    </ul>
+                  </div>
+                </li>
+              <% elsif category.id == 2 %>
+                <li class="drop"> <%= link_to category.name, product_in_category_path(category_id: category.id) %>
+                  <div class="megamenu mega02">
+                    <%= render "books/book", category: category %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+        <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+          <li class="shop_search"><a class="search__active">
+            <%= image_tag "icons/search.png" %>
+          </a>
+          <li class="shopcart"><a class="cartbox_active">
+            <%= image_tag "icons/cart.png" %>
+            <span class="product_qun"><%= @cart.line_items.count %></span></a>
+            <div class="block-minicart minicart__active" id="info--cart">
+              <%= render "carts/info_cart" %>
+            </div>
+          </li>
+          <% if user_signed_in? %>
+            <li class="setting__bar__icon">
+              <a class="setting__active">
+                <%= image_tag "icons/icon_setting.png" %>
+              </a>
+              <div class="searchbar__content setting__block">
+                <div class="content-inner">
+                  <div class="switcher-currency">
+                    <div class="switcher-options">
+                      <div class="switcher-currency-trigger">
+                        <div class="setting__menu">
+                          <span><%= link_to my_account_path do %>
+                              <%= icon("far", "smile") %>
+                              <span>Quản lý tài khoản</span>
+                            <% end %></span>
+                          <% if user_signed_in? && current_user.role ==1 %>
+                            <span>
+                            <%= link_to  bill_not_transport_path do %>
+                              <%= icon("fas", "motorcycle") %>
+                                Shipper
+                            <% end %>
+                              <%= link_to bill_transport_path do %>
+                              <%= icon("fas", "money-bill") %>
+                                Ship Order
+                            <% end %>
+                          </span>
+                          <% end %>
+                          <span>
+                            <%= link_to destroy_user_session_path, method: :delete do %>
+                              <%= icon("fas", "sign-out-alt") %>
+                              Sign Out
+                            <% end %>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, method: :get, :anchor => "wall" %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

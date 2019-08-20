@@ -1,0 +1,5 @@
+<%= link_to t("account.status_deliver_transport"), change_status_bill_path(bill_id: bill.id, status: 1), remote: true, method: :post, class: "btn btn-primary" %>
+<%= link_to t("account.status_deliver_success"), change_status_bill_path(bill_id: bill.id, status: 2), remote: true, method: :post, class: "btn btn-success" %>
+<%= link_to t("account.status_deliver_not_success"), change_status_bill_path(bill_id: bill.id, status: 3), remote: true, method: :post,class: "btn btn-info" %>
+<%= link_to t("account.status_deliver_cancel"), change_status_bill_path(bill_id: bill.id, status: 4), remote: true, method: :post,class: "btn btn-warning" %>
+<%= link_to t("account.status_not_deliver"), change_status_bill_path(bill_id: bill.id, status: 0), remote: true, method: :post,class: "btn btn-danger" %>

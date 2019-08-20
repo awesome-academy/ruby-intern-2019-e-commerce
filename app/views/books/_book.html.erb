@@ -1,0 +1,15 @@
+<% if category.id == 1 or category.id == 5 or category.id == 6%>
+  <% category.childs.each do |child| %>
+    <li><%= link_to child.name, product_in_category_path(category_id: child.id)%></li>
+  <% end %>
+<% elsif category.id == 2 %>
+  <% category.childs.each do |child_level_1| %>
+    <ul class="item item02">
+
+    <li class="title"><%= link_to child_level_1.name, product_in_category_path(category_id: child_level_1.id)%></li>
+    <% child_level_1.childs.each do |child_level_2| %>
+      <li><%= link_to child_level_2.name, product_in_category_path(category_id: child_level_2.id)%></li>
+    <% end %>
+    </ul>
+  <% end %>
+<% end %>

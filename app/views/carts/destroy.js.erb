@@ -1,0 +1,4 @@
+$('#cart--item--<%= @line_item.product.id%>').remove();
+$('.product_qun').html('<%= @cart.line_items.count %>');
+$('#line--item--<%= @line_item.product_id %>').remove();
+$('.total_amount.text-right').html('<span><%= number_to_currency  @cart.total_price , locale: :vi%></span>')

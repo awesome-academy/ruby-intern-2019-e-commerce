@@ -1,0 +1,3 @@
+$('.product_qun').text("<%= @cart.line_items.count %>")
+$('#productmodal').modal('hide');
+$('#info--cart').html('<%= j render "carts/info_cart" %>')

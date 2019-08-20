@@ -1,0 +1,14 @@
+<div class="name-content">
+  <span class="name-user"><%= reply.user.name %></span> &emsp; <span class="content-question"><%= reply.content %>
+  <span class="no-like-question text-center">
+      <% if reply.num_like > 0 %>
+    <%= reply.num_like %><i class="fas fa-thumbs-up"></i>
+    <% end %>
+    </span>
+  </span>
+
+</div>
+<div class="like-reply">
+  <%= link_to "Thích", like_reply_product_path(reply_id: reply.id), method: :post, class: "text-like-reply", remote: true %>&emsp;
+  <%= link_to "Trả lời", reply_for_other_reply_path(content: reply.user.name, question_id: reply.question_id), method: :post, remote: true, class: "text-like-reply" %>
+</div>

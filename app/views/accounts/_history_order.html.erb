@@ -1,0 +1,17 @@
+<div class="col-lg-12 ">
+  <h4>
+    <%= t "your_account.manage_order" %>
+  </h4>
+
+  <% bills.each do |bill| %>
+    <div class="card history-item-order">
+      <div class="date-order">
+        <div class="code-bill"><%= t "account.order" %> #<%= bill.id %></div>
+        <div class="date-bill"><%= t "account.date" %> <%= (bill.created_at).strftime("%I:%M%p %m/%d/%Y") %></div>
+      </div>
+      <% bill.order_bill.order.cart.line_items.each do |line_item| %>
+        <%= render "accounts/history_item_order", line_item: line_item, product: line_item.product, bill: bill %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

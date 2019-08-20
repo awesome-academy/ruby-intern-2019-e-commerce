@@ -1,0 +1,19 @@
+<tr id="line--item--<%= line_item.product_id %>">
+  <td class="product-thumbnail">
+    <%= link_to product_detail_path(product_id: line_item.product_id) do %>
+      <%= image_tag line_item.product.thumbnail %>
+    <% end %>
+  </td>
+  <td class="product-name">
+    <%= link_to line_item.product.name, product_detail_path(product_id: line_item.product_id) %>
+  </td>
+  <td class="product-price"><span class="amount"><%= line_item.price_per_item %></span></td>
+  <td class="product-quantity">
+    <input type="number" value="<%= line_item.count %>" data-product-id="<%= line_item.product_id %>" min="1" name="input--quantity"></td>
+  <td class="product-subtotal"><%= line_item.total_price %></td>
+  <td class="product-remove">
+    <%= link_to remove_item_cart_path(product_id: line_item.product_id), method: :delete, remote: true do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

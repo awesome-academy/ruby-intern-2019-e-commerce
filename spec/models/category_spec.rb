@@ -1,0 +1,15 @@
+require 'rails_helper'
+
+RSpec.describe Category, type: :model do
+  describe "association" do
+    it {is_expected.to have_many :products}
+    it {is_expected.to have_many :childs}
+    it {is_expected.to belong_to :parent}
+  end
+
+  describe "column" do
+    it {is_expected.to have_db_column(:name).of_type(:string)}
+    it {is_expected.to have_db_column(:description).of_type(:string)}
+    it {is_expected.to have_db_column(:parent_id).of_type(:integer)}
+  end
+end

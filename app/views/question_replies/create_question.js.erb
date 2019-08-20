@@ -1,0 +1,4 @@
+$('.question-replies-product').prepend('<div class="question-product-<%= @question.id %>">'
++'<%= j render "question_replies/item_question", question: @question %> '
++'<div class="reply-question-product-<%= @question.id %>"><div class="reply--product--<%= @question.id %>"></div><div class="form-replies-<%= @question.id %>"></div></div></div>')
+$('#question_content').val('')

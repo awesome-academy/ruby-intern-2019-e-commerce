@@ -1,0 +1,51 @@
+<%= render "layouts/img_my_account" %>
+<section class="my_account_area pt--80 pb--55 bg--white">
+  <div class="container">
+    <div class="row">
+      <div class=" col-lg-6">
+        <div class="my__account__wrapper">
+          <h3 class="account__title">Sign Up</h3>
+          <div class="sign-up account__form">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+
+              <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div>
+              <div class="field">
+                <%= f.label :name %><br />
+                <%= f.text_field :name, autofocus: true, autocomplete: "off", class: "form-control" %>
+              </div>
+              <div class="field">
+                <%= f.label :username %><br />
+                <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control" %>
+              </div>
+              <div class="field">
+                <%= f.label :phone %><br />
+                <%= f.text_field :phone, autofocus: true, autocomplete: "phone", class: "form-control" %>
+              </div>
+              <div class="field">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+              </div>
+
+              <div class="field">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"%>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Sign up", class: "form__btn__login" %>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

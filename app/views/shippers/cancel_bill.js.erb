@@ -1,0 +1,1 @@
+$('.btn--choose--bill--<%= @bill.id %>').html('<%= link_to "Nhận đơn", receive_bill_path(bill_id: @bill.id), method: :post, remote:true, class: "btn btn-primary" %>')

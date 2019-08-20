@@ -1,0 +1,56 @@
+<div class="col-lg-12">
+  <h4>
+    Thông tin cá nhân
+  </h4>
+
+  <div class="row row-account">
+        <div class="col-lg-4">
+          <div class="title">Tên</div>
+          <div class="content"><%= current_user.name %></div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="title">Địa chỉ Email</div>
+          <div class="content"><%= current_user.email %></div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="title">Số điện thoại</div>
+          <div class="content"><%= current_user.phone %></div>
+        </div>
+  </div>
+  <div class="row row-account">
+    <div class="col-lg-4">
+      <div class="title">User Name</div>
+      <div class="content"><%= current_user.username %></div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="title">Ngày sinh</div>
+      <div class="content">
+        <% if current_user.birthday.blank? %>
+          Chưa cập nhật
+          <% else  %>
+          <%= current_user.birthday %>
+          <%end %>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="title">Giới tính</div>
+      <div class="content">
+        <% if current_user.gender.blank? %>
+          Chưa cập nhật
+        <% elsif current_user.gender == 0 %>
+          Nữ
+        <% elsif current_user.gender == 1 %>
+          Nam
+        <% end %>
+      </div>
+    </div>
+  <div class="row">
+    <%= link_to "Sửa thông tin", user_registration_path(), method: :put , class: "btn btn-primary" %>
+
+  </div>
+  </div>
+</div>

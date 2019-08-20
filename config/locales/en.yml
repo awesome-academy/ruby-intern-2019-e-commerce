@@ -30,4 +30,95 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  gem_devise:
+    login: "Log In"
+    logout: "Logout"
+    sign_up: "Sign Up"
+    update: "Update"
+    invalid_credentials: "Invalid Credentials"
+    change_pass: "Change my password"
+    send_pass: "Send me reset password instructions"
+    new_pass: "New Password"
+    new_pass_cf: "Password Confirm"
+    min_character: "minimum character"
+    password: "Password"
+    email: "Email"
+    pass_cf: "Password Confirm"
+    gender: "Gender"
+    birthday: "Birth day"
+    name: "Name"
+    username: "User Name"
+    leave_not_change_pass: ""
+    cf_current_pass: "(*)"
+
+  modal:
+    modal_edit_user:
+      title: "Edit User"
+
+  product:
+    title_detail_product: "Detail Product"
+    view: "view"
+    items: "items"
+    total_cart: "Cart Subtotal"
+    go_to_cart: "Go to Checkout"
+    view_edit_cart: "View and edit cart"
+    quantity: "Quantity"
+
+  line_items:
+    image: "Image"
+    product: "Product"
+    price: "Price"
+    quantity: "Quantity"
+    total: "Total"
+    remove: "Remove"
+    cart_total: "Cart total"
+    ship: "Ship"
+    discount: "Discount"
+    grand_total: "Tổng cộng"
+
+  user:
+    name: "Name"
+    address: "Address"
+    phone: "Phone"
+    email: "Email"
+    payment: "Payment"
+
+  flash:
+    payment_sc: "Order product is successful. Please open email to check bill "
+    payment_er: "Order product is failed. Error! An error occurred. Please try again later"
+    error: "Error! An error occurred. Please try again later"
+  orders:
+    hi: "Hi"
+    you_have_a_new_order: " You have a new order"
+    info: "Information"
+    price: "Price"
+    total_price: "Total price"
+    quantity: "Quantity"
+
+  user_mailer:
+    send_order_for_user:
+      subject: "Order of web ShopBook"
+
+  your_account:
+    manage_account: "Manage Account"
+    info_person: "Information User"
+    address: "Addresses"
+    manage_order: "Manage order"
+    order: "Order placed"
+
+  account:
+    order: "Order"
+    date: "Date"
+    status_deliver_not_transport: "Not deliver"
+    status_deliver_transport: "Delivery"
+    status_deliver_success: "Successful delivery"
+    status_deliver_not_success: "Failed delivery"
+    status_deliver_cancel: "Cancel order"
+    delivered: "Delivered"
+    status_not_deliver: "Not delivery"
+
+  ship:
+    detail_bill: "Detail bill"
+    change_status: "Change status"
+    title_change_status: "Change status order"
+

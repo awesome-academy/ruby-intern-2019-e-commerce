@@ -1,0 +1,12 @@
+<% case bill.status %>
+<% when 0 %>
+  <%= t "account.status_not_deliver" %>
+<% when 1 %>
+  <%= t "account.status_deliver_transport" %>
+<% when 2 %>
+  <%= t "account.status_deliver_success" %>
+<% when 3 %>
+  <%= t "account.status_deliver_not_success" %>
+<% when 4 %>
+  <%= t "account.status_deliver_cancel" %>
+<% end %>

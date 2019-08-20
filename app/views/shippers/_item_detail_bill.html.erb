@@ -1,0 +1,77 @@
+<div class="cart-main-area section-padding--lg bg--white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 ol-lg-12">
+        <form action="#">
+          <div class="table-content wnro__table table-responsive">
+            <table>
+              <thead>
+              <tr class="title-top">
+                <th class="product-thumbnail"><%= t "line_items.image" %></th>
+                <th class="product-name"><%= t "line_items.product" %></th>
+                <th class="product-price"><%= t "line_items.price" %></th>
+                <th class="product-quantity"><%= t "line_items.quantity" %></th>
+                <th class="product-subtotal"><%= t "line_items.total" %></th>
+              </tr>
+              </thead>
+              <tbody>
+              <% bill.order_bill.order.cart.line_items.each do |line_item| %>
+                <tr id="line--item--<%= line_item.product_id %>">
+                  <td class="product-thumbnail">
+                    <%= link_to product_detail_path(product_id: line_item.product_id) do %>
+                      <%= image_tag line_item.product.thumbnail %>
+                    <% end %>
+                  </td>
+                  <td class="product-name">
+                    <%= link_to line_item.product.name, product_detail_path(product_id: line_item.product_id) %>
+                  </td>
+                  <td class="product-price"><span class="amount"><%= line_item.price_per_item %></span></td>
+                  <td class="product-quantity">
+                    <p><%= line_item.count %></p>
+                  </td>
+                  <td class="product-subtotal"><%= line_item.total_price %></td>
+
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 offset-lg-6">
+        <div class="cartbox__total__area total--price--cart">
+          <div class="cartbox-total d-flex justify-content-between">
+            <ul class="cart__total__list">
+              <li><%= t "user.name" %></li>
+              <li><%= t "user.address" %></li>
+              <li><%= t "user.email" %></li>
+              <li><%= t "user.phone" %></li>
+              <li><%= t "line_items.cart_total" %></li>
+              <li><%= t "line_items.ship" %></li>
+              <li><%= t "line_items.discount" %></li>
+              <li><%= t "user.payment" %></li>
+            </ul>
+            <ul class="cart__total__tk">
+              <li><%= bill.address.name %></li>
+              <li><%= bill.address.get_address %></li>
+              <li><%= current_user.email %> </li>
+              <li><%= bill.address.phone %></li>
+              <li class="total__price"><%= bill.order_bill.order.cart.total_price %></li>
+              <li>$70</li>
+              <li>$70</li>
+              <li>Trực tiếp</li>
+            </ul>
+          </div>
+          <div class="cart__total__amount">
+            <span><%= t "line_items.grand_total" %></span>
+            <span class="total__price"><%= bill.order_bill.order.cart.total_price %></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

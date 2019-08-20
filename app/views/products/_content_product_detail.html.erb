@@ -1,0 +1,35 @@
+<div class="modal-product">
+  <div class="product-images">
+    <div class="main-image images">
+      <%= image_tag product.thumbnail %>
+    </div>
+  </div>
+  <div class="product-info">
+    <h1><%= product.name %></h1>
+    <div class="rating__and__review">
+      <ul class="rating">
+        <li><span class="ti-star"></span></li>
+        <li><span class="ti-star"></span></li>
+        <li><span class="ti-star"></span></li>
+        <li><span class="ti-star"></span></li>
+        <li><span class="ti-star"></span></li>
+      </ul>
+      <div class="review">
+        <%= product.count_view %> <%= t("product.view") %>
+      </div>
+    </div>
+    <div class="price-box-3">
+      <div class="s-price-box">
+        <span class="new-price"><%= number_to_currency product.price, locale: :vi %></span>
+        <span class="old-price"><%= number_to_currency product.old_price, locale: :vi %></span>
+      </div>
+    </div>
+    <div class="quick-desc">
+      <%= product.overview %>
+    </div>
+
+    <div class="addtocart-btn">
+      <%= link_to t("product.add_to_cart"), add_product_to_cart_path(product_id: product.id, count_item: 1), method: :post, remote: true %>
+    </div>
+  </div>
+</div>
