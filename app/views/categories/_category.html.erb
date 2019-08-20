@@ -1,0 +1,4 @@
+<li><%= link_to product_in_category_path(category_id: category.id) do %>
+    <%= category.name %> <span><%= category.products.all.count %></span>
+<% end %>
+</li>

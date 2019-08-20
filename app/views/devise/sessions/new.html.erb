@@ -1,0 +1,37 @@
+<%= render "layouts/img_my_account" %>
+<section class="my_account_area pt--80 pb--55 bg--white">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <div class="my__account__wrapper">
+          <h3 class="account__title">Login</h3>
+          <div class="sign-up account__form">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div>
+
+              <div class="field">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+              </div>
+
+              <% if devise_mapping.rememberable? %>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end %>
+
+              <div class="actions">
+                <%= f.submit "Log in", class: "form__btn__login" %>
+              </div>
+            <% end %>
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

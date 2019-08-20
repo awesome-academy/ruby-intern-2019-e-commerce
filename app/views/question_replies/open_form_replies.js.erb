@@ -1,0 +1,1 @@
+$('.form-replies-<%= @question.id %>').html('<%= j render "question_replies/form_replies", reply: @reply, question: @question, content: @content %>')

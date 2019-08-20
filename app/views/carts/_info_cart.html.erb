@@ -1,0 +1,32 @@
+<div class="minicart-content-wrapper">
+  <div class="micart__close">
+   <i class="fa fa-times-circle" aria-hidden="true"></i>
+</span>
+  </div>
+  <div class="items-total d-flex justify-content-between">
+    <span><%= @cart.line_items.count %> <%= t "product.items" %></span>
+    <span><%= t "product.total_cart" %></span>
+  </div>
+  <div class="total_amount text-right">
+    <span><%= number_to_currency  @cart.total_price , locale: :vi%></span>
+  </div>
+
+  <% if @cart.line_items.size != 0 %>
+  <% end %>
+  <% if @cart.line_items.size.zero? %>
+    <p>Hiện tại bạn chưa có đơn hàng nào</p>
+    <%else %>
+    <div class="single__items">
+      <div class="miniproduct">
+        <% @cart.line_items.each do |item| %>
+          <%= render "carts/mini_cart", item: item %>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% if @cart.line_items.size != 0 %>
+    <div class="mini_action cart">
+      <%= link_to t("product.view_edit_cart"), detail_cart_path, class: "cart__btn" %>
+    </div>
+  <% end %>
+</div>

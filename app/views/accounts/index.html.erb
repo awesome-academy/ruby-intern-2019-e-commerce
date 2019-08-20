@@ -1,0 +1,29 @@
+<div class="manage-account">
+  <section class="my_account_area pt--80 pb--55 bg--white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="my__account__wrapper">
+            <p>Xin chào <%= current_user.name %></p>
+            <ul class="title-manage-account">
+              <%= link_to t("your_account.manage_account") , my_account_path %>
+            </ul>
+            <ul class="user-info">
+              <li> <%= link_to t("your_account.info_person"), info_account_path, remote:true %></li>
+              <li> <%= link_to t("your_account.address"), info_address_account_path, remote: true %></li>
+            </ul>
+            <ul class="title-manage-account">
+              <%= link_to t("your_account.manage_order"), history_bill_path, remote: true %>
+            </ul>
+<!--            <ul class="user-info">-->
+<!--              <li> <%#= link_to t("your_account.order"), info_account_path, remote:true %></li>-->
+<!--            </ul>-->
+          </div>
+        </div>
+        <div id="right-account" class="col-lg-9">
+          <%= render "information_account" %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

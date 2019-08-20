@@ -1,0 +1,6 @@
+<%= form_with model: reply, url: create_reply_product_path do |f|%>
+  <%= f.text_area :content, name: "abc[content]", class: "form-control", value: content %>
+  <%= f.hidden_field :question_id, value: question.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit "Tạo", class: "btn btn-primary btn-sm btn-create-question" %>
+<% end %>

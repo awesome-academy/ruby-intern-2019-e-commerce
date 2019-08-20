@@ -1,0 +1,38 @@
+<div class="body--content--bill">
+  <div class="title--bill text-center">
+    <h3> Đơn hàng bạn phải vận chuyển</h3>
+  </div>
+  <div class="row body--all--bill">
+    <div class="col-lg-1 text-center bill-line">
+      <div class="title">Mã đơn hàng</div>
+    </div>
+    <div class="col-lg-2 text-center bill-line">
+      Tên người nhận
+    </div>
+    <div class="col-lg-3 text-center bill-line">
+      Địa chỉ
+    </div>
+    <div class="col-lg-1 price--bill text-center bill-line">
+      Giá hóa đơn
+    </div>
+    <div class="col-lg-1 text-center bill-line">
+      Phí ship
+    </div>
+    <div class="col-lg-1 text-center bill-line">
+      Xem chi tiết
+    </div>
+    <div class="col-lg-2 text-center bill-line">
+      Trạng thái
+    </div>
+    <div class="col-lg-1 text-center bill-line">
+      Thay đổi
+    </div>
+  </div>
+
+  <% @bills.each do |bill|  %>
+    <%= render "delivers/item_deliver", bill: bill  %>
+  <% end %>
+</div>
+
+<%= render "modal/modal_details_bill" %>
+<%= render "modal/modal_change_status_bill" %>

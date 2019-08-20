@@ -1,0 +1,29 @@
+<div class="cartbox-total d-flex justify-content-between">
+  <ul class="cart__total__list">
+    <li><%= t "user.name" %></li>
+    <li><%= t "user.address" %></li>
+    <li><%= t "user.email" %></li>
+    <li><%= t "user.phone" %></li>
+    <li><%= t "line_items.cart_total" %></li>
+    <li><%= t "user.payment" %></li>
+  </ul>
+  <ul class="cart__total__tk">
+    <% if address_default.blank? %>
+      <li><%= current_user.name %></li>
+      <li>Chưa có</li>
+      <li><%= current_user.email %></li>
+      <li><%= current_user.phone %></li>
+    <% else %>
+      <li><%= address_default.name %></li>
+      <li><%= address_receive %></li>
+      <li><%= current_user.email %> </li>
+      <li><%= address_default.phone %></li>
+    <% end %>
+    <li class="total__price"><%= number_to_currency @cart.total_price, locale: :vi %></li>
+    <li>Trực tiếp</li>
+  </ul>
+</div>
+<div class="cart__total__amount">
+  <span><%= t "line_items.grand_total" %></span>
+  <span class="total__price"><%= number_to_currency @cart.total_price, locale: :vi %></span>
+</div>

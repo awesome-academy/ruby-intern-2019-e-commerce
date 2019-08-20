@@ -1,0 +1,44 @@
+  <h4>Quản lý tài khoản</h4>
+
+  <div class="row">
+    <div class="col-lg-4 ">
+      <div class="col-lg-12 part-account">
+        <div class="title-account">
+          <p>Thông tin cá nhân | <%= link_to "Chỉnh sửa", "#", class: "edit-account" %></p>
+        </div>
+        <ul class="account-detail-name">
+          <li class="name-account">
+            <%= current_user.name %>
+          </li>
+          <li class="username-account">
+            <%= current_user.username %>
+          </li>
+          <li class="email-account">
+            <%= current_user.email %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="col-lg-12 part-account">
+        <div class="title-account">
+          <p>Sổ địa chỉ | <%= link_to "Chỉnh sửa", "#", class: "edit-account" %>
+          </p>
+        </div>
+        <span class="title-address-default">Địa chỉ mặc định</span>
+        <ul class="account-detail-name">
+          <% if @address_default.present? %>
+            <ul>
+              <li class="title-account-address">
+                <%= @address_default.name %>
+              </li>
+              <li><%=@address_default.address_receive %></li>
+              <li><%=@address_default.province %>, <%= @address_default.district %>, <%= @address_default.ward  %></li>
+              <li><%= current_user.phone %></li>
+            </ul>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+  </div>

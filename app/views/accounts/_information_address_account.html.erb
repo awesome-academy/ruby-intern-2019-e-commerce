@@ -1,0 +1,50 @@
+<div class="col-lg-12">
+  <h4>
+    Danh sách địa chỉ
+  </h4>
+
+  <% addresses.each  do |address|%>
+    <div class="row row-account">
+      <div class="col-lg-2">
+        <div class="title-address">Tên</div>
+        <div class="content"><%= address.name %></div>
+      </div>
+
+      <div class="col-lg-2">
+        <div class="title-address">Số điện thoại</div>
+        <div class="content"><%= address.phone %></div>
+      </div>
+
+      <div class="col-lg-2">
+        <div class="title-address">Địa chỉ</div>
+        <div class="content"><%= address.address_receive %></div>
+      </div>
+      <div class="col-lg-1">
+        <div class="title-address">Tỉnh</div>
+        <div class="content"><%= address.province %></div>
+      </div>
+
+      <div class="col-lg-1">
+        <div class="title-address">Quận</div>
+        <div class="content"><%= address.district %></div>
+      </div>
+
+      <div class="col-lg-1">
+        <div class="title-address">Phường</div>
+        <div class="content"><%= address.ward %></div>
+      </div>
+      <div class="col-lg-1">
+        <div class="title-address">Mặc định</div>
+        <div class="content"><%= address.default %></div>
+      </div>
+
+      <div class="col-lg-2">
+        <div class="title-address">Thực hiện</div>
+        <div class="content">
+          <%= link_to "Chỉnh sửa", "#", class: "link_address" %> | <%= link_to "Xóa", "#",class: "link_address" %>
+        </div>
+      </div>
+
+    </div>
+</div>
+<%end %>

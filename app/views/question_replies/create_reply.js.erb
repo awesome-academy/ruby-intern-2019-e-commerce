@@ -1,0 +1,2 @@
+$('.reply--product--<%= @reply.question.id %>').append('<%= j render "item_replies", reply: @reply %>')
+$('#reply_question_content').val('')

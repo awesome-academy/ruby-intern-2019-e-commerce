@@ -1,0 +1,103 @@
+vi:
+  gem_devise:
+    login: "Đăng nhập"
+    logout: "Đăng xuất"
+    sign_up: "Đăng ký"
+    update: "Hoàn Thành"
+    invalid_credentials: "Thông tin xác thực không đúng"
+    change_pass: "Thay đổi mật khẩu"
+    send_pass: "Send me reset password instructions"
+    new_pass: "Mật khẩu mới"
+    new_pass_cf: "Xác nhận mật khẩu"
+    min_character: "kí tự tối thiểu"
+    password: "Mật khẩu"
+    email: "Email"
+    pass_cf: "Xác nhận lại mật khẩu"
+    gender: "Giới tính"
+    birthday: "Ngày sinh"
+    name: "Họ và tên"
+    username: "User Name"
+    leave_not_change_pass: ""
+    cf_current_pass: "(*)"
+
+  modal:
+    modal_edit_user:
+      title: "Chỉnh sửa thông tin cá nhân"
+
+  product:
+    title_detail_product: "Chi tiết sản phẩm"
+    view: "đã xem"
+    items: "sản phẩm"
+    total_cart: "Tổng giá tiền"
+    go_to_cart: "Thanh toán"
+    view_edit_cart: "Xem và chỉnh sửa giỏ hàng"
+    quantity: "Số lượng"
+    question_title: "Câu hỏi về sản phẩm này"
+    category: "Chuyên mục: "
+    add_to_cart: "Thêm vào giỏ hàng"
+
+  line_items:
+    image: "Ảnh"
+    product: "Sản phẩm"
+    price: "Giá"
+    quantity: "Số lượng"
+    total: "Tổng cộng"
+    remove: "Loại bỏ"
+    cart_total: "Tiền sản phẩm"
+    ship: "Tiền ship"
+    discount: "Giảm giá"
+    grand_total: "Tổng cộng"
+
+  user:
+    name: "Họ và tên"
+    address: "Địa chỉ"
+    phone: "Điện thoại"
+    email: "Email"
+    payment: "Thanh toán"
+
+  flash:
+    payment_sc: "Tiến hành đặt hàng thành công, xin vui lòng kiểm tra đơn hàng thông qua email."
+    payment_er: "Tiến hành đặt hàng thất bại, xảy ra lỗi trong quá trình xử lý."
+    error: "Đã xảy ra lỗi"
+  orders:
+    hi: "Xin chào"
+    you_have_a_new_order: "Bạn có một đơn hàng mới"
+    info: "Thông tin chi tiết"
+    price: "Giá"
+    total_price: "Tổng cộng giá"
+    quantity: "Số lượng"
+
+  user_mailer:
+    send_order_for_user:
+      subject: "Đơn hàng web bán sách ShopBook"
+
+  your_account:
+    manage_account: "Quản lý đơn hàng"
+    info_person: "Thông tin cá nhân"
+    address: "Sổ địa chỉ"
+    manage_order: "Quản lý đơn hàng"
+    order: "Đơn hàng đã đặt"
+
+  account:
+    order: "Order"
+    date: "Date"
+    status_deliver_not_transport: "Chưa giao hàng"
+    status_deliver_transport: "Đang giao hàng"
+    status_deliver_success: "Giao hàng thành công"
+    status_deliver_not_success: "Giao hàng không thành công"
+    status_deliver_cancel: "Đã hủy đơn hàng"
+    delivered: "Đã giao hàng "
+    status_not_deliver: "Không giao hàng"
+
+  ship:
+    detail_bill: "Chi tiết về đơn hàng"
+    change_status: "Sửa"
+    title_change_status: "Thay đổi trạng thái đơn hàng"
+
+  slide:
+    buy: "Mua"
+    your: "Sách"
+    favourite: "Yêu"
+    book: "Thích"
+    from: "Ở"
+    here: "Đây"

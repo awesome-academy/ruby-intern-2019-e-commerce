@@ -1,0 +1,69 @@
+<div class="ht__bradcaump__area bg-image--3">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="bradcaump__inner text-center">
+          <h2 class="bradcaump-title">Shopping Cart</h2>
+          <nav class="bradcaump-content">
+            <%= link_to "Home", root_path, class: "breadcrumb_item" %>
+            <span class="brd-separetor">/</span>
+            <span class="breadcrumb_item active">Shopping Cart</span>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Bradcaump area -->
+<!-- cart-main-area start -->
+<div class="cart-main-area section-padding--lg bg--white">
+  <div class="container">
+    <% if @cart.line_items.size.zero? %>
+      <h4> Hiện tại bạn chưa có đơn hàng nào </h4>
+    <% else %>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 ol-lg-12">
+          <form action="#">
+            <div class="table-content wnro__table table-responsive">
+              <table>
+                <thead>
+                <tr class="title-top">
+                  <th class="product-thumbnail"><%= t "line_items.image" %></th>
+                  <th class="product-name"><%= t "line_items.product" %></th>
+                  <th class="product-price"><%= t "line_items.price" %></th>
+                  <th class="product-quantity"><%= t "line_items.quantity" %></th>
+                  <th class="product-subtotal"><%= t "line_items.total" %></th>
+                  <th class="product-remove"><%= t "line_items.remove" %></th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @cart.line_items.each do |line_item| %>
+                  <%= render "line_items/line_item", line_item: line_item %>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6">
+          <div class="cartbox__total__area total--price--cart">
+            <%= render "total_price_cart", address_default: @address_default, address_receive: @address_receive  %>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-6">
+          <div class="text-center ">
+            <% if @address_default.blank? %>
+            <%= link_to "Thanh Toán", payment_path(bill: {user_id: current_user.id, address_id: nil, total_price: @cart.total_price, note: nil, status: 0}), method: :post, class: "btn btn_payment"%>
+          <% else %>
+              <%= link_to "Thanh Toán", payment_path(bill: {user_id: current_user.id, address_id: @address_default.id, total_price: @cart.total_price, note: nil, status: 0}), method: :post, class: "btn btn_payment"%>
+
+          <% end %>
+              </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>

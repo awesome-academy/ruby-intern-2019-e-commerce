@@ -1,0 +1,30 @@
+<div class="row item--ship">
+  <div class="col-lg-1 text-center bill-line">
+    <%= bill.id %>
+  </div>
+  <div class="col-lg-2 text-center bill-line">
+    <%= bill.user.name %>
+  </div>
+  <div class="col-lg-3 text-center bill-line">
+    <%= bill.address.get_address %>
+  </div>
+  <div class="col-lg-1 text-center bill-line">
+    <%= number_to_currency bill.total_price, locale: :vi %>
+  </div>
+  <div class="col-lg-1 text-center bill-line">
+    <%= number_to_currency bill.price_ship, locale: :vi %>
+  </div>
+  <div class="col-lg-1 text-center bill-line">
+    <%= link_to "Chi tiết", show_detail_bill_path(bill_id: bill.id), remote: true, class: "text--detail--bill" %>
+  </div>
+
+  <div class="col-lg-2 text-center bill-line status-bill-<%= bill.id %>">
+    <%= render "delivers/status_bill", bill: bill %>
+  </div>
+  <div class="col-lg-1 text-center bill-line">
+    <div class="btn-change-status-bill">
+        <%= link_to t("ship.change_status"), modal_change_status_bill_path(bill_id: bill.id), method: :get, remote: true, class: "btn btn-primary btn-sm" %>
+    </div>
+
+  </div>
+</div>

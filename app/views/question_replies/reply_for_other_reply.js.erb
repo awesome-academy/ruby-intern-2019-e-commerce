@@ -1,0 +1,4 @@
+$('.form-replies-<%= @question.id %>').html('<%= j render "question_replies/form_replies", reply: @reply, question: @question, content: @content %>')
+$('.form-replies-<%= @question.id %> #reply_question_content').focus();
+var num = $('.form-replies-<%= @question.id %> #reply_question_content').val();
+$('.form-replies-<%= @question.id %> #reply_question_content').focus().val('').val(num+" ");
